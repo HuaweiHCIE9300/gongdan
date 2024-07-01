@@ -6,17 +6,17 @@ def Inside(sip1,dip1,svlan1,dvlan1,dport1,sip2,dip2,svlan2,dvlan2,dport2,sip3,di
     g1=[sip1,dip1,svlan1,dvlan1,dport1]
     bb.append(g1)
     g2=[sip2,dip2,svlan2,dvlan2,dport2]
-    if g2[2]=="None":
+    if g2[2]=="None" or  g2[2]==None:
         pass
     else:
         bb.append(g2)
     g3=[sip3,dip3,svlan3,dvlan3,dport3]
-    if g3[2]=="None":
+    if g3[2]=="None" or g3[2]==None:
         pass
     else:
         bb.append(g3)
     g4=[sip4,dip4,svlan4,dvlan4,dport4]
-    if g4[2]=="None":
+    if g4[2]=="None" or g4[2]==None:
         pass
     else:
         bb.append(g4)
@@ -25,6 +25,7 @@ def Inside(sip1,dip1,svlan1,dvlan1,dport1,sip2,dip2,svlan2,dvlan2,dport2,sip3,di
     for i in bb:
         S_Vlan = i[2]
         D_Vlan = i[3]
+        print(i)
         x = i[0].split("/")[0]
         y = i[0].split("/")[1]
         xx = i[1].split("/")[0]
